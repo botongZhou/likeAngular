@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id='diva'></div>
+		<div id='divb'></div>
+		<div id='divc'></div>
+		<script>
+			obj={_v:''};
+			Object.defineProperty(obj,'v',{
+				get:function(){return this._v},
+				set:function(newValue){
+						console.log(newValue,1)
+						document.getElementById('diva').innerHTML=newValue.a;
+						document.getElementById('divb').innerHTML=newValue.b;
+						document.getElementById('divc').innerHTML=newValue.c;
+						this._v=newValue;
+				}
+			});
+			Object.defineProperty(obj,'v2',{
+				get:function(){return this._v2},
+				set:function(newValue){
+						console.log(newValue)
+						this._v2=newValue;
+				}
+			});
+			console.log(obj)
+			var global=window;
+			
+			obj.v=10;
+			obj.v={a:1,b:2,c:3}
+			obj.v={a:1,b:3,c:3}
+			obj.v2=3;
+			obj.v2=5;
+			console.log(obj.v);
+//			setInterval(function(){
+//				obj.v++;
+//			console.log(obj.v)
+//			},1000)
+			
+		</script>
+	</body>
+</html>
