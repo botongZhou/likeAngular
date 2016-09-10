@@ -11,7 +11,7 @@ HTMLElement.prototype.getScopeObj=function(){
     var k=getAttr(this);
     if(k.length>0){
       for(var i=0;i<k.length;i++){
-          scopeObjs.push({keys:getKeys(k[i]),dom:this})
+          scopeObjs.push({keys:getKeys(k[i].key),dom:this})
       }
     }
     return scopeObjs
@@ -36,7 +36,7 @@ function getAttr(dom){
     var ks=[];
     for(var i=0;i<$hz.length;i++){
         var k=dom.getAttribute($hz[i]);
-        k&&ks.push(k);
+        k&&ks.push({name:$hz[i],key:k});
     }
     return ks
 }
@@ -117,5 +117,6 @@ $scope.v5=[{v51:5},2];
 $scope.i1=3;
 $scope.i2={i21:[{i23:3}]};
 setInterval(function(){
-    console.log($scope.i1,$scope.i2.i21[0].i23)
+    $scope.v2++;
+    console.log($scope.v2,$scope.i1,$scope.i2.i21[0].i23)
 },1000)
