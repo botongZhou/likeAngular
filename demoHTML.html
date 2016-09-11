@@ -6,14 +6,17 @@
 </head>
 <body>
 <div hz-bind="v1"></div>
-<div hz-bind="v2"></div>
-<div hz-bind="v3"></div>
+<div hz-bind="v1"></div>
+<div hz-bind="i2.i22"></div>
 <div hz-bind="v4.v41"></div>
 <div hz-bind="v5[0].v51"></div>
 <div id="div">这个没绑定</div>
 <input type="text" id="input" hz-model="i1">
 <input type="text"  hz-model="i2.i21[0][i23]">
 <input type="checkbox" hz-model="ic1" hz-true-value="3" hz-false-value="-3" id="chec">
+<input type="checkbox" hz-model="ic2" >
+<div hz-show="ic2" hz-bind="v1" hz-click="e1"></div>
+<!--<input type="radio" hz-model="ic2" >-->
 <div></div>
 <script src="js/hzDataPlus.js"></script>
 </body>
